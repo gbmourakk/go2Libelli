@@ -1,0 +1,30 @@
+# Ambiente virtual
+venv/
+.venv/
+env/
+
+# Python
+**__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.egg-info/
+
+# Variáveis de ambiente (nunca versionar credenciais reais)
+.env
+
+# Banco local de teste (quick_test.py)
+*.db
+quick_test.db
+
+# Node (se o frontend vier a usar)
+node_modules/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/

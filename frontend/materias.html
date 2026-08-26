@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matérias — Libelli</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="logo" href="index.html">libe<span>lli</span></a>
+  <nav class="main">
+    <a data-nav href="index.html">Libi IA</a>
+    <a data-nav href="capturar.html">Capturar</a>
+    <a data-nav href="materias.html">Matérias</a>
+    <a data-nav href="estudos.html">Estudos</a>
+  </nav>
+  <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema">◐</button>
+</div></header>
+
+<main class="container">
+  <h1>Minhas matérias</h1>
+  <p class="sub" id="materias-count"></p>
+
+  <form class="card row" id="materia-form" style="margin-bottom:20px">
+    <input id="materia-nome" placeholder="Nome da matéria" required>
+    <input id="materia-topicos" type="number" min="0" placeholder="Tópicos" style="max-width:120px">
+    <button class="btn" type="submit">Cadastrar</button>
+  </form>
+
+  <div class="grid cards" id="materias"></div>
+</main>
+
+<nav class="bottom">
+  <a data-nav href="index.html">Libi IA</a>
+  <a data-nav href="capturar.html">Capturar</a>
+  <a data-nav href="materias.html">Matérias</a>
+  <a data-nav href="estudos.html">Estudos</a>
+</nav>
+
+<script src="api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

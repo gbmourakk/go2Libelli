@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capturar material — Libelli</title>
+    <meta
+      name="description"
+      content="Fotografe páginas de livros, cadernos e provas antigas para transformar em resumos e atividades."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <a class="logo" href="index.html">libe<span>lli</span></a>
+        <nav class="main">
+          <a data-nav href="index.html">Libi IA</a>
+          <a data-nav href="capturar.html">Capturar</a>
+          <a data-nav href="materias.html">Matérias</a>
+          <a data-nav href="estudos.html">Estudos</a>
+        </nav>
+        <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema">◐</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Capturar material</h1>
+      <p class="sub">Tire uma foto ou envie um arquivo. A Libi lê o conteúdo e gera o estudo.</p>
+
+      <div class="layout">
+        <section class="card">
+          <div class="frame" id="preview">Enquadre a página e tire a foto</div>
+
+          <div class="row" style="margin-top: 14px">
+            <select id="materia-captura" required>
+              <option value="">Selecione a disciplina</option>
+            </select>
+            <label class="btn" for="file" style="white-space: nowrap">Tirar foto / enviar</label>
+            <input
+              id="file"
+              type="file"
+              accept="image/*"
+              capture="environment"
+              style="display: none"
+            />
+          </div>
+
+          <textarea
+            id="captura-texto"
+            rows="4"
+            placeholder="Cole ou digite o texto do material capturado (reconhecimento automático de imagem / OCR ainda não implementado)"
+            style="margin-top: 12px"
+          ></textarea>
+
+          <div class="row" style="margin-top: 12px">
+            <button class="btn" id="captura-salvar" type="button">Salvar captura</button>
+          </div>
+        </section>
+
+        <aside>
+          <h2>Capturas recentes</h2>
+          <div class="list" id="capturas"></div>
+        </aside>
+      </div>
+    </main>
+
+    <nav class="bottom">
+      <a data-nav href="index.html">Libi IA</a>
+      <a data-nav href="capturar.html">Capturar</a>
+      <a data-nav href="materias.html">Matérias</a>
+          <a data-nav href="estudos.html">Estudos</a>
+    </nav>
+
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

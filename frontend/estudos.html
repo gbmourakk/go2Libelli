@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudos — Libelli</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="logo" href="index.html">libe<span>lli</span></a>
+  <nav class="main">
+    <a data-nav href="index.html">Libi IA</a>
+    <a data-nav href="capturar.html">Capturar</a>
+    <a data-nav href="materias.html">Matérias</a>
+    <a data-nav href="estudos.html">Estudos</a>
+  </nav>
+  <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema">◐</button>
+</div></header>
+
+<main class="container" id="estudos">
+  <h1>Estudos</h1>
+  <p class="sub">Cadastre conteúdos, pesquise materiais e gere recursos de estudo.</p>
+
+  <section class="card" style="margin-bottom:20px">
+    <h2>Cadastrar conteúdo</h2>
+    <form id="conteudo-form">
+      <div class="row">
+        <input id="conteudo-titulo" placeholder="Título do conteúdo" required>
+        <select id="estudo-disciplina" required></select>
+      </div>
+      <textarea id="conteudo-texto" rows="5" placeholder="Digite o conteúdo estudado" required></textarea>
+      <button class="btn" type="submit">Cadastrar conteúdo</button>
+    </form>
+  </section>
+
+  <section class="card" style="margin-bottom:20px">
+    <div class="row">
+      <div class="grow">
+        <h2>Meus conteúdos</h2>
+        <p class="sub">Atualize, exclua ou gere materiais a partir de cada conteúdo.</p>
+      </div>
+      <button class="btn secondary" id="conteudo-carregar" type="button">Atualizar lista</button>
+    </div>
+    <div class="grid cards" id="conteudos"></div>
+  </section>
+
+  <section class="card" style="margin-bottom:20px">
+    <h2>Buscar estudos</h2>
+    <form id="busca-form">
+      <div class="row">
+        <input id="busca-termo" placeholder="Termo de busca">
+        <select id="busca-disciplina"></select>
+        <select id="busca-tipo">
+          <option value="">Todos os tipos</option>
+          <option value="conteudo">Conteúdo</option>
+          <option value="comentario">Comentário</option>
+          <option value="resumo">Resumo</option>
+          <option value="quiz">Quiz</option>
+          <option value="revisao">Revisão</option>
+        </select>
+      </div>
+      <div class="row">
+        <select id="busca-ordem">
+          <option value="criado_em">Data</option>
+          <option value="titulo">Título</option>
+          <option value="tipo">Tipo</option>
+          <option value="disciplina">Disciplina</option>
+        </select>
+        <select id="busca-direcao">
+          <option value="desc">Decrescente</option>
+          <option value="asc">Crescente</option>
+        </select>
+        <button class="btn" type="submit">Pesquisar</button>
+      </div>
+    </form>
+    <div class="list" id="resultados-busca" style="margin-top:14px"></div>
+  </section>
+
+  <section class="card">
+    <h2>Materiais gerados e revisões</h2>
+    <div class="list" id="materiais-gerados"></div>
+  </section>
+</main>
+
+<nav class="bottom">
+  <a data-nav href="index.html">Libi IA</a>
+  <a data-nav href="capturar.html">Capturar</a>
+  <a data-nav href="materias.html">Matérias</a>
+  <a data-nav href="estudos.html">Estudos</a>
+</nav>
+
+<script src="api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

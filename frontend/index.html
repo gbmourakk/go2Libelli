@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Libelli — Estudos organizados com a Libi IA</title>
+    <meta
+      name="description"
+      content="Gere resumos, atividades e explicações com a Libi IA, digitalize livros e organize suas matérias."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <a class="logo" href="index.html">libe<span>lli</span></a>
+        <nav class="main">
+          <a data-nav href="index.html">Libi IA</a>
+          <a data-nav href="capturar.html">Capturar</a>
+          <a data-nav href="materias.html">Matérias</a>
+          <a data-nav href="estudos.html">Estudos</a>
+        </nav>
+        <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema">◐</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Estude com a Libi</h1>
+      <p class="sub">Resumos, atividades e explicações a partir do que você está estudando.</p>
+
+      <div class="layout">
+        <section class="card">
+          <div class="chips">
+            <button class="chip active" data-modo="resumo">Resumo</button>
+            <button class="chip" data-modo="atividades">Atividades</button>
+            <button class="chip" data-modo="explicar">Explicar</button>
+          </div>
+
+          <div id="chat">
+            <div class="msg libi">
+              Olá, eu sou a Libi! Diga o tema que você está estudando e eu monto um resumo ou uma
+              lista de atividades.
+            </div>
+          </div>
+
+          <div class="chips">
+            <button class="chip" data-sugestao>Resuma a Revolução Francesa</button>
+            <button class="chip" data-sugestao>10 questões de funções do 2º grau</button>
+            <button class="chip" data-sugestao>Explique fotossíntese</button>
+          </div>
+
+          <div class="row">
+            <textarea id="chat-input" rows="2" placeholder="Escreva o tema..."></textarea>
+            <button class="btn" id="chat-send">Enviar</button>
+          </div>
+        </section>
+
+        <aside class="card">
+          <h2>Sua semana</h2>
+          <div class="meta"><span>Resumos gerados</span><span>12</span></div>
+          <div class="meta" style="margin-top: 8px"><span>Atividades feitas</span><span>48</span></div>
+          <div class="meta" style="margin-top: 8px"><span>Horas de foco</span><span>9h</span></div>
+          <a class="btn secondary" href="capturar.html" style="display: block; margin-top: 16px; text-align: center"
+            >Digitalizar material</a
+          >
+        </aside>
+      </div>
+    </main>
+
+    <nav class="bottom">
+      <a data-nav href="index.html">Libi IA</a>
+      <a data-nav href="capturar.html">Capturar</a>
+      <a data-nav href="materias.html">Matérias</a>
+          <a data-nav href="estudos.html">Estudos</a>
+    </nav>
+
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
