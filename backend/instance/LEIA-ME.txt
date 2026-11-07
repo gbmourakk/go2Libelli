@@ -1,0 +1,1 @@
+O banco libelli.db e criado automaticamente no primeiro uso. Para preservar os dados antigos, copie seu backend/instance/libelli.db anterior para esta pasta com o Flask desligado. Nao compartilhe dados reais.

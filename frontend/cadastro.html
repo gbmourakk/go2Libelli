@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Criar uma conta — Libelli</title><link rel="stylesheet" href="styles.css"/></head>
+<body><header class="topbar"><div class="container"><a class="logo" href="login.html">libe<span>lli</span></a></div></header>
+<main class="container" style="max-width:500px;margin:6vh auto"><section class="card auth-card">
+<h1>Criar uma conta</h1><p class="sub">Organize seus estudos com segurança.</p>
+<form id="form-auth" class="auth-form"><label for="nome">Nome</label><input id="nome" required maxlength="120" autocomplete="name" placeholder="Seu nome" />
+<label for="email">E-mail</label><input id="email" type="email" required maxlength="150" autocomplete="email" placeholder="seu@email.com" />
+<label for="senha">Senha (mínimo 8 caracteres)</label><input id="senha" type="password" required minlength="8" autocomplete="new-password" placeholder="Crie uma senha" />
+<label for="confirmar">Confirme a senha</label><input id="confirmar" type="password" required minlength="8" autocomplete="new-password" placeholder="Repita a senha" />
+<p id="erro-auth" role="alert" aria-live="polite" style="color:#d04a4a;min-height:1.5em"></p>
+<button class="btn" type="submit" id="botao-auth">Cadastrar</button></form>
+<p style="margin-top:18px">Já tem conta? <a href="login.html">Entrar</a></p>
+</section></main><script src="api.js"></script><script src="autenticacao.js"></script></body></html>

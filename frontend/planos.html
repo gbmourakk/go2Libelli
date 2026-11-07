@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planos de estudo — Libelli</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="logo" href="index.html">libe<span>lli</span></a>
+  <nav class="main">
+    <a data-nav href="index.html">Libi IA</a>
+    <a data-nav href="materias.html">Matérias</a>
+    <a data-nav href="estudos.html">Estudos</a>
+    <a data-nav href="planos.html">Planos de estudo</a>
+  </nav>
+  <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema">◐</button>
+</div></header>
+
+<main class="container" id="plano-pagina">
+  <h1>Planos de estudo</h1>
+  <p class="sub">Escolha uma matéria, um assunto e o tempo disponível. A Libi monta um cronograma e deixa o resultado salvo para consultar depois.</p>
+
+  <section class="card" style="margin-bottom:20px">
+    <h2>Gerar um novo plano</h2>
+    <form id="plano-form" class="plano-form">
+      <div class="plano-campos">
+        <label>Matéria
+          <select id="plano-disciplina" required><option value="">Carregando matérias...</option></select>
+        </label>
+        <label>Assunto
+          <input id="plano-tema" placeholder="Ex.: Funções do 2º grau" minlength="3" maxlength="200" required>
+        </label>
+        <label>Quantidade de dias (1 a 30)
+          <input id="plano-dias" type="number" min="1" max="30" step="1" value="7" required>
+        </label>
+        <label>Minutos disponíveis por dia (15 a 480)
+          <input id="plano-minutos" type="number" min="15" max="480" step="1" value="60" required>
+        </label>
+        <label>Nível de dificuldade
+          <select id="plano-dificuldade" required>
+            <option value="iniciante">Iniciante</option>
+            <option value="intermediario">Intermediário</option>
+            <option value="avancado">Avançado</option>
+          </select>
+        </label>
+      </div>
+      <div class="row plano-acoes">
+        <button id="plano-gerar" class="btn" type="submit">Gerar e salvar plano</button>
+        <span id="plano-status" class="meta" role="status" aria-live="polite"></span>
+      </div>
+    </form>
+  </section>
+
+  <section class="card" style="margin-bottom:20px" id="plano-atual" hidden>
+    <h2 id="plano-atual-titulo">Plano gerado</h2>
+    <p class="sub" id="plano-atual-meta"></p>
+    <div id="plano-atual-texto"></div>
+  </section>
+
+  <section class="card">
+    <div class="row plano-acoes">
+      <h2>Meus planos salvos</h2>
+      <button class="btn secondary" type="button" id="planos-atualizar">Atualizar</button>
+    </div>
+    <div id="planos-lista" class="list"><p class="sub">Carregando...</p></div>
+  </section>
+</main>
+
+<nav class="bottom">
+  <a data-nav href="index.html">Libi IA</a>
+  <a data-nav href="materias.html">Matérias</a>
+  <a data-nav href="estudos.html">Estudos</a>
+  <a data-nav href="planos.html">Plano inteligente</a>
+</nav>
+<script src="api.js"></script>
+<script src="formatar_ia.js"></script>
+<script src="auth.js"></script>
+<script src="app.js"></script>
+<script src="planos.js"></script>
+</body>
+</html>
