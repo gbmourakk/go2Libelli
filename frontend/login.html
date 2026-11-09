@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Entrar</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="topbar">
+        <div class="container">
+            <a class="logo" href="login.html">Libe<span>lli</span></a>
+        </div>
+    </header>
+    <main class="container" style="max-width:500px; margin:6vh auto;">
+        <section class="card auth-card">
+            <h1>Entrar no Libelli</h1>
+            <p class="sub">Organize seus estudos com segurança.</p>
+
+            <form id="form-auth" class="auth-form">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" required autocomplete="email" placeholder="seu@email.com" />
+
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" required autocomplete="current-password" placeholder="Sua senha" />
+
+                <p id="erro-auth" role="alert" aria-live="polite" style="color:#d04a4a; min-height:1.5em;"></p>
+
+                <button class="btn" type="submit" id="botao-auth">Entrar</button>
+            </form>
+
+            <p style="margin-top:18px;">Não tem conta? <a href="cadastro.html">Criar conta</a></p>
+        </section>
+    </main>
+
+    <script src="api.js"></script>
+    <script src="autenticacao.js"></script>
+</body>
+</html>

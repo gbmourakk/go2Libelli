@@ -1,0 +1,79 @@
+               
+<html lang="eng">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Libelli</title>
+    <meta
+      name="description"
+      content="Gere resumos, atividades e explicações com a Libi IA e organize suas matérias."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <a class="logo" href="index.html">Libe<span>lli</span></a>
+        <nav class="main">
+          <a data-nav href="index.html">Libi IA</a>
+          <a data-nav href="materias.html">Matérias</a>
+          <a data-nav href="estudos.html">Estudos</a>
+    <a data-nav href="planos.html">Planos de estudo</a>
+        </nav>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Alternar tema" title="Alternar tema"><span class="theme-icon" aria-hidden="true"></span></button>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Libi IA</h1>
+
+      <div class="layout chat-layout">
+        <aside class="card chat-sidebar" aria-label="Histórico de conversas">
+          <div class="chat-sidebar-head">
+            <h2>Conversas</h2>
+            <button class="btn secondary" id="chat-new" type="button">Nova</button>
+          </div>
+          <div id="chat-conversations" class="chat-conversations">
+            <p class="sub">Carregando histórico...</p>
+          </div>
+        </aside>
+        <section class="card chat-panel">
+          <h2 id="chat-current-title">Nova conversa</h2>
+          <div id="chat">
+            <div class="msg libi">
+              Olá, eu sou a Libi! Diga o tema que você está estudando e eu monto um resumo ou uma
+              lista de atividades.
+            </div>
+          </div>
+
+          <div class="chips">
+            <button class="chip" data-sugestao>Resuma a Revolução Francesa</button>
+            <button class="chip" data-sugestao>10 questões de funções do 2º grau</button>
+            <button class="chip" data-sugestao>Explique fotossíntese</button>
+          </div>
+
+          <div class="row">
+            <textarea id="chat-input" rows="2" placeholder="Escreva o tema..."></textarea>
+            <button class="btn" id="chat-send">Enviar</button>
+          </div>
+        </section>
+
+        
+      </div>
+    </main>
+
+    <nav class="bottom">
+      <a data-nav href="index.html">Libi IA</a>
+
+      <a data-nav href="materias.html">Matérias</a>
+          <a data-nav href="estudos.html">Estudos</a>
+    <a data-nav href="planos.html">Planos de estudo</a>
+    </nav>
+
+    <script src="api.js"></script>
+    <script src="formatar_ia.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+    <script src="chat.js"></script>
+  </body>
+</html>

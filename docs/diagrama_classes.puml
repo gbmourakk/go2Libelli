@@ -1,0 +1,147 @@
+@startuml
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+title go2Libelli - Models e relacionamentos
+
+class Usuario {
+  +id: Integer
+  +nome: String
+  +email: String
+  -senha_hash: String
+  +criado_em: DateTime
+  +salvar()
+  +atualizar()
+  +deletar()
+  +to_dict()
+}
+
+class Disciplina {
+  +id: Integer
+  +nome: String
+  +descricao: Text
+  +usuario_id: Integer
+  +criado_em: DateTime
+  +salvar()
+  +atualizar()
+  +deletar()
+  +to_dict()
+}
+
+class Conteudo {
+  +id: Integer
+  +titulo: String
+  +conteudo: Text
+  +disciplina_id: Integer
+  +criado_em: DateTime
+  +salvar()
+  +atualizar()
+  +deletar()
+  +to_dict()
+}
+
+class Comentario {
+  +id: Integer
+  +titulo: String
+  +texto: Text
+  +disciplina_id: Integer
+  +conteudo_id: Integer (opcional)
+  +criado_em: DateTime
+  +salvar()
+  +atualizar()
+  +deletar()
+  +to_dict()
+}
+
+class Resumo {
+  +id: Integer
+  +titulo: String
+  +conteudo: Text
+  +gerado_por_ia: Boolean
+  +disciplina_id: Integer
+  +conteudo_id: Integer (opcional)
+  +criado_em: DateTime
+  +salvar()
+  +atualizar()
+  +deletar()
+  +to_dict()
+}
+
+class Quiz {
+  +id: Integer
+  +titulo: String
+  +conteudo: Text
+  +perguntas: Text
+  +disciplina_id: Integer
+  +conteudo_id: Integer (opcional)
+  +criado_em: DateTime
+  +salvar()
+  +atualizar()
+  +deletar()
+  +to_dict()
+}
+
+class Revisao {
+  +id: Integer
+  +titulo: String
+  +conteudo: Text
+  +data_revisao: DateTime
+  +status: Enum
+  +disciplina_id: Integer
+  +conteudo_id: Integer (opcional)
+  +criado_em: DateTime
+  +salvar()
+  +atualizar()
+  +deletar()
+  +to_dict()
+}
+
+class PlanoEstudo {
+  +id: Integer
+  +titulo: String
+  +tema: String
+  +dias: Integer
+  +minutos_por_dia: Integer
+  +dificuldade: String
+  +cronograma: Text
+  +disciplina_id: Integer
+  +criado_em: DateTime
+  +salvar()
+  +deletar()
+  +to_dict()
+}
+
+class Conversa {
+  +id: Integer
+  +titulo: String
+  +usuario_id: Integer
+  +criado_em: DateTime
+  +atualizado_em: DateTime
+  +to_dict()
+  +deletar()
+}
+
+class Mensagem {
+  +id: Integer
+  +conversa_id: Integer
+  +papel: String
+  +conteudo: Text
+  +criado_em: DateTime
+  +to_dict()
+}
+
+Usuario "1" -- "0..*" Conversa : possui
+Conversa "1" -- "0..*" Mensagem : contém
+Usuario "1" -- "0..*" Disciplina : possui
+Disciplina "1" -- "0..*" Conteudo : contém
+Disciplina "1" -- "0..*" Comentario : possui
+Disciplina "1" -- "0..*" Resumo : possui
+Disciplina "1" -- "0..*" Quiz : possui
+Disciplina "1" -- "0..*" Revisao : possui
+Disciplina "1" -- "0..*" PlanoEstudo : possui
+Conteudo "0..1" -- "0..*" Comentario : relacionado
+Conteudo "0..1" -- "0..*" Resumo : gera
+Conteudo "0..1" -- "0..*" Quiz : gera
+Conteudo "0..1" -- "0..*" Revisao : revisado
+
+@enduml
